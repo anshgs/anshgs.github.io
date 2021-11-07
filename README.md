@@ -1,3 +1,2 @@
 # anshgs.github.io
-Hello!
-Testing how this works. 
+Personal portfolio hosted at anshgs.me
