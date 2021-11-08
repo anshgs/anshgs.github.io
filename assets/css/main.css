@@ -3015,7 +3015,7 @@ input, select, textarea {
 
 		/* Footer */
 
-			#footer .copyright li {
+			footer .copyright li {
 				border-left-width: 0;
 				display: block;
 				line-height: 2.25em;
