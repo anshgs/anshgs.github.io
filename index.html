@@ -35,7 +35,7 @@
 						<header class="major">
 							<h2 style="color: #49bf9d;">Hey there, I'm Ansh!</h2>
 						</header>
-						<p> I’m currently a student at UIUC studying computer science with a passion for software development, artificial intelligence, 
+						<p> I'm currently a student at UIUC studying computer science with a passion for software development, artificial intelligence, 
 							quantum computing, and anything technical and impactful.
 							I'm always on the lookout for new experiences and connections, so feel free to reach out!
 					</p>
@@ -67,8 +67,7 @@
 							<h3><a href="https://moleculemaker.org/"> Moleculer Maker Lab - Research Assistant</a></h3>
 							<p>
 								I've been working within the <i>Zhao Group(Thrust 3)</i> under Dr. Haiyang Cui on researching machine learning-guided directed halogenase evolution.
-								So far, I've created scripts to help with processing and visualizing data from the AlphaFold Protein Structure Database to assist with later work.
-								I've also been researching and designing scripts to extract Drug Target Interaction data from literature in order to collect data for use in future deep learning models.
+								So far, I've been working on extracting reaction information from existing literature through both text based methods with biomedical entity relationship extraction models and image based methods with extracting SMILES formulas from molecular reaction diagrams
 							</p>
 						</article>
 						<article class="col-6 col-12-xsmall work-item">
@@ -76,8 +75,9 @@
 							<h3><a href="https://conferences.sigcomm.org/sigcomm/2022/cfp.html"> PeopleWeave - Research Assistant </a> </h3>
 							<p>
 								PeopleWeave is a networking application to help connect and study interactions between researchers which will be premiered as the official social platform for ACM SIGCOMM '22.
-								So far, I've been working on designing a scraper to collect research papers from various online databases and feed them into graph and SQL databases.
-								Future work will focus on using semantic clustering and other NLP techniques to extract meaningful information about and relations between researchers. 
+								So far, I've been working on designing a scraper to collect research papers from various online databases.
+								I've also designed a Flask API to make the data accessible through the pipeline for other parts of the research project. 
+								
 							</p>
 						</article>
 						
@@ -87,6 +87,27 @@
 					<section id="two">
 						<h2 style="color: #49bf9d;">Recent Projects</h2>
 						<div class="row">
+							<article class="col-6 col-12-xsmall work-item">
+								<div><span class="image fit"><img src="images/fulls/StyleTransfer.png" alt="" /></span></div>
+								<h3><a href="https://github.com/CS222SP22/course-project-dhs-a" class="icon brands fa-github">  Style Share </a></h3>
+								<p>
+									<i>JavaScript, Node, React, Redux, tfjs</i> <br><br><br>
+									Style Share is a website that allows users to create 3d scenes and use a machine learning model to stylize them according to the style of another image.
+									The model was built using tfjs to allow it to run within the browser, and was compressed by nearly 8x using quantization and distillation to increase its speed.
+									You can test out the website here: (to be added)!
+							</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<div><span class="image fit"><img src="images/fulls/InfDet.png" alt="" /></span></div>
+								<h3><a href="https://devpost.com/software/infected-and-detected" class="icon brands fa-github">  Infected & Detected </a></h3>
+								<p>
+									<i>TFLite, OpenCV, Flask, MongoDB</i> <br>
+									<i><u>HackIllinois 2022: Best Community & Sustainability Track Project</u></i><br><br>
+									An edge computing tool to help farmers get analytics on their crop health and invasive weed growth over time.
+									An image classifier was trained using transfer learning on MobileNetV2 to identify different types of plant diseases and weeds.
+									We utilized pruning and quantization afterwards to compress the model by 10x to run quickly on a Rasberry Pi with a Coral Edge TPU.
+								</p>
+							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<div><span class="image fit"><img src="images/fulls/escapeMaze.png" alt="" /></span></div>
 								<h3><a href="https://github.com/anshgs/EscapeMaze" class="icon brands fa-github">  EscapeMaze </a></h3>
@@ -162,8 +183,6 @@
 							
 						</div>
 					</section>
-
-				
 
 			</div>
 
