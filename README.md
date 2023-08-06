@@ -1,2 +1,2 @@
 # anshgs.github.io
-Personal portfolio hosted at anshgs.me
+Personal portfolio hosted at anshgs.com
