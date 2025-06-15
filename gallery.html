@@ -233,67 +233,228 @@
         </div>
 
         <!-- Add section navigation -->
-        <div class="section-nav">
-            <span>Jump to: </span>
-            <div class="section-links">
-                <a href="#spring24">Spring 2024</a>
-                <a href="#fall23">Fall 2023</a>
-                <a href="#summer23">Summer 2023</a>
-                <a href="#spring23">Spring 2023</a>
-                <a href="#fall22">Fall 2022</a>
-                <a href="#spring22">Spring 2022</a>
-                <a href="#fall21">Fall 2021</a>
+        <div class="grouped-nav">
+            <h3 class="nav-title">Jump to:</h3>
+            <div class="year-groups-wrapper">
+                <div class="year-group">
+                    <h4>2025</h4>
+                    <a href="#spring25">Spring</a>
+                </div>
+                <div class="year-group">
+                    <h4>2024</h4>
+                    <a href="#spring24">Spring</a>
+                    <a href="#summer24">Summer</a>
+                    <a href="#fall24">Fall</a>
+                    <a href="#winter24">Winter</a>
+                </div>
+                <div class="year-group">
+                    <h4>2023</h4>
+                    <a href="#spring23">Spring</a>
+                    <a href="#summer23">Summer</a>
+                    <a href="#fall23">Fall</a>
+                </div>
+                <div class="year-group">
+                    <h4>2022</h4>
+                    <a href="#spring22">Spring</a>
+                    <a href="#summer22">Summer</a>
+                    <a href="#fall22">Fall</a>
+                </div>
+                <div class="year-group">
+                    <h4>2021</h4>
+                    <a href="#fall21">Fall</a>
+                </div>
             </div>
         </div>
-
         <!-- Add styles for section navigation -->
         <style>
-            .section-nav {
-                background: var(--nav-bg);
-                padding: 1rem 2rem;
-                border-radius: 10px;
-                margin-bottom: 2rem;
+            /* The main container for the entire navigation bar */
+            .grouped-nav {
                 display: flex;
-                align-items: center;
-                gap: 1rem;
-                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 2rem;
+                padding: 1.2rem 2rem;
+                margin-bottom: 2rem;
+                background: var(--nav-bg);
+                border-radius: 10px;
                 backdrop-filter: blur(10px);
             }
-
-            .section-links {
-                display: flex;
-                gap: 1rem;
-                flex-wrap: wrap;
+            
+            /* The "Jump to:" title on the left */
+            .nav-title {
+                margin: 0;
+                padding-top: 0.15rem; /* Helps vertically align with year headers */
+                font-size: 1.2rem;
+                color: var(--text-color);
+                flex-shrink: 0; /* Prevents the title from shrinking if space is tight */
             }
-
-            .section-links a {
+        
+            /* A wrapper for all the year group columns */
+            .year-groups-wrapper {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 2.5rem;
+                justify-content: flex-end; /* Aligns the columns to the right */
+            }
+        
+            /* Styling for each individual year column */
+            .year-group h4 {
+                margin: 0 0 0.5rem 0;
+                font-size: 1.1rem;
+                color: var(--text-color);
+                border-bottom: 1px solid var(--accent-color);
+                padding-bottom: 0.25rem;
+            }
+        
+            .year-group a {
                 color: var(--link-color);
                 text-decoration: none;
-                padding: 0.3rem 0.8rem;
-                border-radius: 15px;
-                border: 1px solid var(--accent-color);
+                display: block;
+                padding: 0.2rem 0;
                 transition: all 0.3s;
-                font-size: 0.9rem;
             }
-
-            .section-links a:hover {
-                background: var(--accent-color);
-                color: var(--bg-color);
-                transform: translateY(-2px);
-            }
-
-            @media (max-width: 768px) {
-                .section-nav {
-                    flex-direction: column;
-                    align-items: flex-start;
-                }
+        
+            .year-group a:hover {
+                color: var(--hover-color);
+                transform: translateX(3px);
             }
         </style>
+        <div class="section-header">
+            <h2 class="section-title" id="spring25">Spring 25</h2>
+            <div class="section-nav-links">
+                <a href="#winter24">↓ Next</a>
+                <span>|</span>
+                <a href="#top">↑ Top</a>
+            </div>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNJca8XBh47fl80Rep-OIrcuxY7pZx1AOI_L6-mur0V5Ocrsqo0dL4k-c8kpTOektTWu_w8vTAJM04Jj5JDM2FgsMO_f5_oC9K0xa1lGdkRZ3GFjFFY=w1920-h1080" alt="Spring 25"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPwUtziRNPt-852uqokYBJ9Lm-QkCrKEWgelWuLR4RIyeDS8ATGVUHEtlD-inYETowmiH0Cc1zYBtRaaJP5RBhK_AXhBDP_qdyo6f_Qj0CvZsBgwJAZ=w1920-h1080" alt="Spring 25"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczOWKbMAgpl5tK4kLbfqgkzs6_wfDv1FPL-hfpeXUL0vvG4dspzMe5S77UnKVnsi3BA--ko6ovWC45TXDoyMpiF7lNbYKm5OgP_trN_Ux9V73QbHi0sj=w1920-h1080" alt="Spring 25"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNr88yk7VqCYuiz2pfZ45VeHuFunST0XyUAhK7tdmFYGpApaDgYRaTSIRlZYrYjmddShdLexG6V3AJEzHnUfwkzYKEM8rpBfYc9jmO8rKM96ptJ4tkv=w1920-h1080" alt="Spring 25"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczN7WUQ0EFhC1AaZtgs9KiYBmEBwRzmy_-E8zrkx1eb83Y_XM89NMRS04jiRYSUvaO-dXykMHG9b0bKlYy3tZ0bNz3VJlk1b4ZgbfD9e2a-w9GiFeuab=w1920-h1080" alt="Spring 25"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMTElXbHsrTyvlin6ZW06pC0xwkJSNEk1CSSYNQgtuD1kXB4jh4BBtXA0jZRkCGY4KXwEYdbtuhwtUYV-7GL9vwLiOwRRe76rsscsjDezsN0oIF3iO5=w1920-h1080" alt="Spring 25"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPsHyJwGejZiHH1vrKWKezamdDu9JiJb2MV5EUPKgsF1UIUmKKInfcUxTsF4bdaPXTGveO01QfJvwUI_B98C12aR2AVt7SfIVDnLfK7azNatMd7OnUP=w1920-h1080" alt="Spring 25"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNh4ELB5Zmuf5Lf-IdJoukCypHF40N9_10AeGU8jpsmIy4eMy8F-S099ZT4BGHUVje6U52Gx0s4ixYk1r0hJVrWD5ORig5n6E4AvCWXUdWIA1c3mAmr=w1920-h1080" alt="Spring 25"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczOFr_3DWA2nGPxrUDVqPOzolY09aIQPbJp557SDv72bV7E1sGgEN4x3tWP1t1GBnd5VgcUB3GmFYe2MWZrWaeOzGP4GtgI_wwehpylc2RwgJV1a84cQ=w1920-h1080" alt="Spring 25"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMySRFMNaVOr0GxejYDN_JFu-rBg9AC3Ucq_fC5c9Mn66-q6vYIQSUOQy6hsHDGGnHhRMcsN2k44HFZbLjN4XTjNwNV9mUctfay29Kw-fljpRZOH-uY=w1920-h1080" alt="Spring 25"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNMhuSB2eFMP2SfewaYIzT3e06k1u-bkjqmA6uR5uyO6uYkq4fat8bjYDp9NBI-Fl-fy51resSTOEkBa8FDDrncOTC9s2RE714mvhtK-zbDiL-J4KLu=w1920-h1080" alt="Spring 25"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczOdWu44gvH8hRZFhrW3jasHTW59gzwq0pR7kTWV1wR3detG7OLXZAhyqCRym9SZhEwgDTDhNdE3UFQ42QOpoRaxrk6_SSbVqvYvbQn_k3qxycV-5osY=w1920-h1080" alt="Spring 25"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNo51rerI-Rxnn6SZRuTFEQGu6JeH_ozpBbC1dgJiLW1lvpDdr-CYvqjUJC77R8OLlqzHzaf4CJIk3BI1GNqoTGjo-8yasvLq1keYlFEaqsSXNBdj1F=w1920-h1080" alt="Spring 25"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMb_X-Oghi2gmUI0pFtzsZFzYI3ijNk5uQ4mxSHukLsGlgff_Q7pRiLLLYxU2gdFC-YB6g-q4IK0O6NAaSaJ1t-mPGyFE_s4_x-3wxONgCX47PbJiT0=w1920-h1080" alt="Spring 25"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczOqwDSZTE0l8ne59ena65vu0LMGCviPGi-RSsZOo-xV1TBEMG_4toZp10CRheTUVCrCi0FgIHwLB7wI965bdLWcue5qd-Kdu2uKF39STjCUAJpz63Jb=w1920-h1080" alt="Spring 25"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMhDm34As8RRDByj_gzoMdBxvb-UwySRcRYEusq2MnYrNGVDuXk_KPWzNGZvxXe_xAR_RuamgrfOqu6ADZB_0p473Ad1V8PCQzBdPV86j17nXuf5Pll=w1920-h1080" alt="Spring 25"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPE5EkgL_adyAfzG0cvZQ8WyqgYNcTq4Y3S272NH6J5LaWH3gfRpiLtt-h7QXSR3Ni-YQk_12TxWKPmQk1hASixP6euOinS9vPy7ZnNnIvmV3K3KYBQ=w1920-h1080" alt="Spring 25"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNStwMTYdM00WRKtoNeUfd75JozIXUfqZc6FfTn9ehbdJlvvby8XLwRlVk0dfyIpc6X_Bl9Mj5zO7pFgDsIBUxAbLc05YJRBVOB2AwX7DgIYuz05H06=w1920-h1080" alt="Spring 25"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMcj1at9owNQuNt6DT-ddA_PjNO5_kNUcCWwOycq5u5ghnklNh9pyMZTod4ghpXsYOPr3F1JfLU1pHl-ICGWXZT_sjou9c68RXdeQhyJya7gvSp67Kn=w1920-h1080" alt="Spring 25"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNAJQuue7kEwxsY38yajFHj-U1iQgR4y_6lCnROOuzwwKeZ9-rlSNP_C9QH_kQcQ1A61404XfrKDS6KJ6zHxh4VLAjONbgs2dGkwlKlidHvS8ip6ERO=w1920-h1080" alt="Spring 25"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczN2h4qUncVu4YJqSrp0e89cY9YXH6cs5rzFmYEpAf2K38czpWKxhQkAck5LYnd05te_vBrxDLXFk38QZ4keKyORsZEgK-r_ZdYLKaZMmaHF9W7eGn7i=w1920-h1080" alt="Spring 25"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMSG5CREBATk5W2tRIbUArpI1sfvhoJPKaPD1fmGVQOAVDnif7if2VFdNb-5MWDR0Vq93X8slM3FhSRKpgBRIrvBkubXMLqulxJyUwLYLau0yaZxC9A=w1920-h1080" alt="Spring 25"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczOL2Km8BRyIt1A-DnMcZFf9f7WuYWfEzqrR76Pcvq6awOtzljI99tWwtSgn5uP2o7UzaKdQQUdpOPUDN3739h_5gVOMNKTqO8V1KZxw8t3fHEfEDhHi=w1920-h1080" alt="Spring 25"></div>
+        </div>
 
+        <div class="section-header">
+            <h2 class="section-title" id="winter24">Winter 24</h2>
+            <div class="section-nav-links">
+                <a href="#spring25">↑ Previous</a>
+                <span>|</span>
+                <a href="#fall24">↓ Next</a>
+                <span>|</span>
+                <a href="#top">↑ Top</a>
+            </div>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPW9vRa29lovIMgcmzeQabry929MeedCXIiOMqtF2wTaO8o5hyHHliYTBDvbcRBjjhnFP0uwpU1v3LLRxmSrwYxxvbmf6dG8q44rS8iQxFQlM5OupbF=w1920-h1080" alt="Winter 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczN20gPEhVbZBAGAUJkfWl3CZoVfkJ9pFLHInWV1aHvyoGKwBg06u9gF7XaOzV6E_vOPUP8Gh7oI21U-Z2s98bHQCyF-xdQm-5GUm1Kseqhx9kYpLuxc=w1920-h1080" alt="Winter 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMnhxYV-rv0VzCrFpYdw9SyI3oHwdUo-nPCInvG2DpspHScolQ9zqU_CGoaWCooqepTicqB9n3k0Y_VApL2TcbmbWxOhqyZygvDQSlJqTAOVkMbuFcj=w1920-h1080" alt="Winter 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMP9RVkbzSypWmDWqBc3v_ZjI4WcGWDZK8emQWK73CgrnQlXCVkMCZLXxJwUqvpTOFpnzTj8nJ4eyFvfAEAT9yhxn3PhJeOmy3Re2Bipbe_IU5aQQC7=w1920-h1080" alt="Winter 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNwfCuPSmojlCnXg4h-A7EtVwYklKPbzow6iJxZThlTQ-g-0Gh41fE2ggSt8cxFbTijOy7TbJjM60thuJG2Sm4xu77fyAR7z8EP3r_vCj2QgF3kNoa4=w1920-h1080" alt="Winter 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMBquA8Ui3h85uOwev2cWnYKxc1B-GK7EMKlSUR_Oq_VkGNoK4VtEXGGbzVSqlGN9v_qqVlsNt5R8f3kD-pnu75sJolyMC4qZ-fY4EgfFUydKlI0YSR=w1920-h1080" alt="Winter 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczOGIJ-PB_LbiCjFr4M1mPe5R2pOf9Tpx3VUKqmFb3-BwOS7mgNDd07R9ynhM0pCYEiL2Nn2gOItCspYMgSdS9kYK4rg60MNwXajzvMZoJv7FG8H7air=w1920-h1080" alt="Winter 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPQI4uJXp94-xCTVPmg1z0wzWgH1wKvBg1QbUFv7jBFy9OztYp3Mlbse4Mixz_Ek69lhPgy56v9kIJADEwPPGG7bS6wguYUf2OZ2Fi_Oc1tku-wmeTT=w1920-h1080" alt="Winter 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczO0CmrbHxqARpkZrowGpUs-3yEQ2FMkfVmA_SqoU-qplv7LVjxA68kR2hLvy2ClxHA0uM23U30du4MzVf-k-dEnAdLn9sUBmpEu2t9mI5V-ZhsMOKgp=w1920-h1080" alt="Winter 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczOoP0T6Tut5rRLkV1Y0LXh44QglCSMCrZT5TR1rREV4Ok655qYrpGJYy5yfbWAvkwB0XacuzQe7iyleUtT5g8aA285PanQYYb4SpFhp5ujMP2xtBgsD=w1920-h1080" alt="Winter 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPkqOUi4-OrEkReph6APsVjfHJ_XDDPPV-VnJUA_Hsyg2ovb7cid62GyM5zViU8RBBgMYlHQHq99TjlQXpz3Jn2Bhh6OSq4B8Q0Or6EsNfESQ--iwik=w1920-h1080" alt="Winter 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNHxG0ERTsxwbm7CiDXGsPTfx_w1PmfUsKvhPm1WR_Kr8KAFCoY0x-t0tm9xC0wrbnQzCic6XP3uW8gpeK782TSBZQFCzrRkuMMdWQvkeQSK0me8Fiq=w1920-h1080" alt="Winter 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMpZkVMMEmsd0FW0E07SMllLN-f1pEFT5RSGmWQKP3Yv38uXZwtvXhHsXKVSe93k6ws1_xzAjYM-Xi4D76O-UXuDppZlAbEDuhjbGgZqO26NdUY_Mkl=w1920-h1080" alt="Winter 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMkegb3AghQ07V_DSlXEoCk-G7cy2S7n2QX8jJJcLzTF-gobF4BxeWteLz2yAPKrLtPWvLxD_Z4NrVvZj4oQcQfPRvlSGIOyALg1BIk51BcElQ5ZiTO=w1920-h1080" alt="Winter 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczOi2LgAsWAYWSYlCJjmtACmnRbyNffhENhYH1QWsP9zI_qUYWxu62zuMrDb_smRHh8o9SwmtIK9o5AiN7mN9p80-sS7DnqOeKFOLIt5YpUo5txUJYgL=w1920-h1080" alt="Winter 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPKvkSxrHRNXKiIgvHZkRdTBJ74g1LKLiAk_SdTBVQTYJ5jM34f0riS2-4LFFWG0OsCQlTeqhhOdDTOhtetLiRTBy2Ex9YgxvptdhboSORK0_0YgpPn=w1920-h1080" alt="Winter 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczOnNtZ_C6ZiH6vBveHDKqBMk_IhPgDHyfscU0jKuv1mvrBvf_Xmy6z8B3vjD4TiWZnJfubhdAzwcr3uxZucYkZt8W8SaBcCky6csZ4huhLPyoHClUTr=w1920-h1080" alt="Winter 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczO7OX5cGBF1OVN6Fd8lCJy1_JkG6PPVXevxnKo-GfinX7J8RFN7eSWDH-Vq6K11AErgfTA0WAjA0fT9N-Gv4wNQVjD5i11y5yCGMAhFRmf6B9W5IiEp=w1920-h1080" alt="Winter 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczO9ykH0cBONSBVSuuRVGzcL8Gwc3B0L-wM5UJrTs9GL06oSCUbMZUiAtgD6Yw-kKlJclKTR1imh6s1dwISmXg4pJeJQOmW0brzRt5fHsNCkkVjgdBEk=w1920-h1080" alt="Winter 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczOvqVmAO4yEHR0NEo2mIS0VhheVifa8T7kiNy0mAgefucR0rd9IMtsElsD1qUx9OpuMrW3Rr3bQYmhYYR_1qnxjFofRq4lWljSkX3oQaLvkNiVOrCYb=w1920-h1080" alt="Winter 24"></div>
+        </div>
+
+        <div class="section-header">
+            <h2 class="section-title" id="fall24">Fall 24</h2>
+            <div class="section-nav-links">
+                <a href="#winter24">↑ Previous</a>
+                <span>|</span>
+                <a href="#summer24">↓ Next</a>
+                <span>|</span>
+                <a href="#top">↑ Top</a>
+            </div>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczO_dEZDNejBRaeRviPLEcfZcy4ryk1cQJ7jbU3E1stpkOQpr74_CFW-1FiqHj_aq-QOkKTY6h8EKFdTjoUftLB4hsttPoj8ID0yNyFAlDYNp37mSBp3=w1920-h1080" alt="Fall 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczN64nF00jDsOIa9R7F75EjapvcGbJlEewuHWvObOj711PErCdKktrjY0COvplGYX_WSzNu81sVjnDtv38K4YMldUny_aqtkoZ3yMIh1WrAWHTFac8Kt=w1920-h1080" alt="Fall 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMs4S2enOQ3hPzJYavqf8zHEdR1qFPCDzIs5o6wd1oH_KUODWAPgQXcWJovlOR_53-yNimCzjO1yi5kYsKaiOfVeDLt2aKjoiJ_hKbLxCNT_CLhRWud=w1920-h1080" alt="Fall 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczM_rvGt5kh1zerXBnwdTV33Icipp1X4yV6GUxAGTPB_ECLQUjHhCNlS4K8HrGDTL9J9lDNsM-gJ_awR-WDnQ51He1XTI74tIk5FlsvycVZVVQ9L6s1i=w1920-h1080" alt="Fall 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczM2BKcaUSr2EENj7SlW27XeBypAY1gAJquBIuUOF79scFKyH00CAQ-DwcLEhc1xWnI-VB_0S30I60OFVQaHH1A9lD6NPCDJdDfNjz5eiGA2tuRkwPiA=w1920-h1080" alt="Fall 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMXSIWrO6rsBsEhCBri2PwcHXn1RCydPcb-xaFAqSY4lTMaD9nfNrjUuQn4_hYSNxbNLYE2T1Cxcq_67DjJAtuTBU1B-2PngRyRFVOIHPTj10z0c7qZ=w1920-h1080" alt="Fall 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczP6_4Nh428Huv1zBpOEtFKJi3p-zqJ9Vr3MMk9daB3veEqxcDGRD6e6vQIMQMVRmfsgOENphBD9QZePL3_sCYkObCMiP7FSXKSVoz3t1XkbDs0WCXbz=w1920-h1080" alt="Fall 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPhXjxdqIPnfW9CJwPFjc64k1OWW5VizCwSPIyXkAD7n4jBvjNZRBxvKWWWuKHJbCdZVD3a3QSyPSOBq_5m_LoBpYQNVZEMIq1i4l29fRkuNyR-i_jE=w1920-h1080" alt="Fall 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNNU3GCbZ-WLXni5TRmfYktiW5K1oz9MMjgqHCP12lBSU8wXHWaXtplMu9BsGIcldhnrKTCHv0wP4P_fVGPn0JZ-Xut9Cy3nGixgdwHmwo4V6bN1QaK=w1920-h1080" alt="Fall 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPI0Ha5-D-RRyFBbxwOrqj5lEK5vOdlIE6dyF9s_4UJDTDMk5nDe3mQI_b4IM4PosfQI0bsvqZMiGLfwoty_3t63-6fY_9q4aDhnhIoMbwDxC24zLR1=w1920-h1080" alt="Fall 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPe5FHFTMkmQEXkyX9YZ5LJDdgtKb17dfaTJL-V4WkFsx73xffI9E8p8Gw6nkNujB5WjAihEYkye19Q6rH8NE4NFZmUcim9Wk2ZKgMqmFkFkMxEfvQe=w1920-h1080" alt="Fall 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPsr62Z_VC3Zkm5jzUmrrYsAwUGKd5XvotNUfXGI9MbtTN-UiYTQnCZpmXKvI-KXrPfP29-ljZCKjqLPoR1ABMkETufZqiGRvBY0cddvJ5wKcML_UXv=w1920-h1080" alt="Fall 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczP6ymMWn-xQXduzEXA1x2Lv0SYZXdVxsqjviqPiyY3np0DQdYKrLOavA1uPUwdOSS45cUp6ILsC35T_UO4o55_g4PAxeEoLFCvJAPHousyWXn4Mw6KP=w1920-h1080" alt="Fall 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPGtFsiMl_UHcbk9HbvjhzjuvQmw67Pl8uHeARexuxyvDejbHZa3FIAe-agp3mfPGslkGPV3giCSvyVfukAv6brj-q27T7FbbCsvNN4ICaEjGUjkVwk=w1920-h1080" alt="Fall 24"></div>
+        </div>
+
+        <div class="section-header">
+            <h2 class="section-title" id="summer24">Summer 24</h2>
+            <div class="section-nav-links">
+                <a href="#fall24">↑ Previous</a>
+                <span>|</span>
+                <a href="#spring24">↓ Next</a>
+                <span>|</span>
+                <a href="#top">↑ Top</a>
+            </div>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPl-A_LHq-TRgEKbCAqQUTQrdI2Fk9AXQvhPowT43jkYW01UCitMRZquTSrIJEmOINpfBrfqEzENCBmi7m7RtJ1Y7-VTb5WtFtNvCNKNF69CGjUURrg=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPo7_CJiK5ZC1g4Y7jOo1FCfArkTecKuayYTKpenundXboHayoqOqvR3E4IQ3NlNVsBJXZN5dankcRN7j53v4tH3LEIIYbhDSXnKq_4Zd7DNwrvXq9R=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPz7oknFx5VRsW2rOKSqkrQlQ6cg-9QFXgjwlrkfH9PqIJrkt6ghy-2eAudxi2qvDDTqk2NlmD8Th4G4XMll6OsYAKtkugSuxvPrtbpS0o-G8kJklHp=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMDWHeiiTU8SBY714m7oT71czSvf9yvMQkYjOCGWJ9cgJXS710w_cNsG68E6CaQncLDWn5UeO7qVDVfKVsFbMD3KNzjcIA4vLVIkQvvBBCOUEPysc9H=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczOKpMIV_xDZ7VNa2VXa2fYKsOMmB49SN4o30FlCTM0mzlG_4fJ_XlCkYN1lv1_t3Sd0cgSVHqJ2lImmofqH0BRtGbrS063HyDI-JDjN5XDNbMKCjWGU=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNi72rDibXTNWNaoWl7ttlzbMHAIpeCig9R5wila3HWBwmccqH5pBSleDx2w-sM6JC1NWnexXNjmH-1d092W_1HNK8TDwN-YlQPYYujVsoFQu5zJXSe=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczP6WF___ns2A2fSWSRQSRxHagTuJRDsLsRBfnh2WXTEYSTEjVWvq8K1HZyUvFataaegYly4NSK_yzCHfQMKkT6x2ukwr-kBweWIi4N_GysImTBXgSBZ=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMBnxsLhVqNw8tMNve7LP0XORIqUJXObDR5MfHCcr6q4HZz4EQUkR9V77_jpjovoIXT6ee36GTw6I7yOdwUNdS81bjnp2OZ-dYkQlpz1T014gXO2ggR=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNIZGwH-1gx2bqlGcinyfRdqXB8BNxwC6Wr_XZ45WKVqY2IDgO_nDnE6H3GNnMKSGfyIz5vPywGEBzGVZbXMh-iCDLuTgz5LeHvoXudijBAV2yjxJBd=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPhEp2phcgdimuhbo7gqGlTegEgdC6I9aEclibyAMm90SBy-AvyFjIilydTO-OXVhKpmxl6YbVFQF1O_uMsrMIJZEZr8q6YnMflDgxm_k3QYImn9qpu=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMP4y07AYuH04bHSMuTcUsBceR54Ll5P2FJxA3QW_iIZFISY1vWAw-jIcKm2GAqqXHmqBqBH0Lpmfy_93K1wXIBCxVPH3IWkjyOA56_6oh0S7Jdq_48=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNfJ3Q1MoUiWLXho87EtdOTDPUJvVsLkaWJV8-dj-t8ULhTfiHRD6F1OTPpgViFuSIlf2gdXyFKh0fc7LB1p5Sa17oOJjVp1nt1YEENfw1WUxx6sCK_=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczOHQPQ0y7tyaXl6kCl5VRQmLvAc1oZtTLrOGP7lZ9K8cLsODC-jUDuz1uuNH5bUS1czg3whBhpltXmQkB_XQ3AUnSAH9r5FVP9Mhi1rwHlsvsOmlWAy=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczM4b79_ni5loL_E7wHBRucqzqbRUPKGWnjnQvosWNoO09EbYOq10E9iVS1aL_xohxB09uuL96tw7Y7Cb7DbRkilemEOU7R_C76WL6knMk5hECuDxjmW=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPLMGghvRHxQn3O2tTNliKMKmcgl6Ui-mM7TpOzgbuDC7i_SKGj5_uLmyit8Rqa0injQc4cUpHTpH-WIiYQh31GtRU_D9eN-ugrTzzwwizT0YaMdF2I=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPoF6mvPXlEwhilqxDR8Xd4DLGEptSAsfOOvPC98p5Zn_XoNNrp3jZdlsIGLayir379T2QT305o6Romu8DiZl-48xdBSACT0tOAUiYdZeEjv8MIUewf=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNDcyBkTnppxRZfAzL9z1ln0PA8s64uDul-XmjC01mdYtt3K3xj7JzZJkRvSYac9B2ZllmDNvG6HUMqwtPwj73C5kJh0jFyWiQRE3QX2nunkH-TiqqC=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNfjERbU5uMtYBvwHBnrUBIEOfN9vCMpG1KiztkHLqCnd7m1__praCylxghA2jLBBsNRBA2pfuppyQ2HpzdJfyf0MKXCM7W19X-qSOQ_ZN9OVMeLiOl=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMVQ8PqGJMyTRq_iMPcjxkBLlrWvhRl985o3U6HiqZx91qV7xorb0FW5ycnIvlioD3j5W5Coj-kHBXNdhr5XSFIHg4UGYLsM6tMqUGVVXMVC_Wj6ILx=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMIc72lr-0pLKutPrzmyKCMDFllKx-2wTuEnC4MP7Zn8erN0loNyF4-kmRO4OXJNcFZCI20ZrehZPb9jJDkRDApa5uf4CuZqEKtw9SvgKdpsofLx9gp=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNUCDVig9z9EUbrwgyu003YEyoOr1jImpVEz96bj-yQehwJMe2v46FCj0UtbmdaGJFk8aMNZD7eZh-ChnaijGnwJChY4oFk7mqCtoMWIJcazFqEafP5=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczP-M7H6WkF98HRbC2Qkx7wpOEvqoLVQd-J8BHviquCtF8LFnhsGXU0bqShxu1iz7nlZc2-FKMJI_TIwX3ro-idJziO7aXSEZObi2a-xh9xj5UE7b8iR=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNm8jj73KeaKdn8UsYqS0zRsn9ko_jn7nTjNlk2Py-tpeNdXWQnThkj_5h7W9f-QfBUMfqoH4aWkbkeDrC7PcYsmK6Um-zBVijNeR85Q5vGP5OM5cwG=w1920-h1080" alt="Summer 24"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczOWZYQ3NdI8hyErJZTQW7AicSc9r4JBg3Xmlnfa5yX-g7reImVN-y55JwUYd_rKy7VVJ6Mwyq2n4lA1TvSiBiDFsmkCtCmVSuz3CsEmru2hVzk__MUS=w1920-h1080" alt="Summer 24"></div>
+        </div>
         <!-- Example of updated section header -->
         <div class="section-header">
             <h2 class="section-title" id="spring24">Spring 2024</h2>
             <div class="section-nav-links">
+                <a href="#summer24">↑ Previous</a>
+                <span>|</span>
                 <a href="#fall23">↓ Next</a>
                 <span>|</span>
                 <a href="#top">↑ Top</a>
