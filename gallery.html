@@ -97,7 +97,7 @@
             border: 2px solid var(--accent-color);
             border-radius: 50%;
             cursor: pointer;
-            color: var(--text-color);
+            color: var(--accent-color);
             font-size: 1.2rem;
             width: 40px;
             height: 40px;
@@ -105,6 +105,25 @@
             align-items: center;
             justify-content: center;
             transition: all 0.3s;
+            position: relative;
+        }
+
+        .theme-toggle svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+            transition: all 0.3s;
+        }
+
+        /* Show sun icon in light theme, moon icon in dark theme */
+        [data-theme="light"] .moon-icon,
+        [data-theme="dark"] .sun-icon {
+            display: none;
+        }
+
+        [data-theme="light"] .sun-icon,
+        [data-theme="dark"] .moon-icon {
+            display: block;
         }
 
         .theme-toggle:hover {
@@ -229,7 +248,15 @@
     <div class="container">
         <div class="header">
             <a href="index.html" class="back-link">← Back to Home</a>
-            <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+            <button class="theme-toggle" onclick="toggleTheme()">
+                <svg class="sun-icon" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="5"/>
+                    <path d="m12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"/>
+                </svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" style="display: none;">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
         </div>
 
         <!-- Add section navigation -->
