@@ -26,7 +26,7 @@
             --dot-color-2: rgba(158, 165, 236, 0.3);
         }
 
-        [data-theme="dark"] {
+        [data-theme="dark"], .dark-theme {
             --bg-color: #1a1a1a;
             --text-color: #ffffff;
             --accent-color: #9EA5EC;
@@ -438,15 +438,32 @@
 
     <script>
         function toggleTheme() {
-            document.body.dataset.theme = 
-                document.body.dataset.theme === 'dark' ? 'light' : 'dark';
-            localStorage.setItem('theme', document.body.dataset.theme);
+            const currentTheme = document.body.dataset.theme;
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.body.dataset.theme = newTheme;
+            
+            // Also manage the class for better compatibility
+            if (newTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+            } else {
+                document.body.classList.remove('dark-theme');
+            }
+            
+            localStorage.setItem('theme', newTheme);
         }
 
         // Load saved theme preference
         const savedTheme = localStorage.getItem('theme') || 
             (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
         document.body.dataset.theme = savedTheme;
+        
+        // Ensure theme is applied immediately
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+        } else {
+            document.body.classList.remove('dark-theme');
+        }
 
         // Function to toggle bokeh effect
         function toggleBokeh() {
