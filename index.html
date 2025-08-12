@@ -50,6 +50,8 @@
             animation: gradientShift 20s ease infinite;
             color: var(--text-color);
             transition: background-color 0.3s, color 0.3s;
+            position: relative;
+            overflow-x: hidden;
         }
 
         @keyframes gradientShift {
@@ -62,6 +64,138 @@
             100% {
                 background-position: 0% 0%, 15px 15px, 7.5px 7.5px;
             }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(100px, -50px) scale(1.1);
+            }
+            50% {
+                transform: translate(200px, 100px) scale(0.9);
+            }
+            75% {
+                transform: translate(-50px, 150px) scale(1.05);
+            }
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0.1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        /* Individual bokeh circles */
+        .bokeh {
+            position: fixed;
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0;
+            animation: float 20s ease-in-out infinite;
+            transition: opacity 0.8s ease;
+        }
+
+        .bokeh.visible {
+            opacity: 0.4;
+            animation: float 20s ease-in-out infinite, fadeInOut 8s ease-in-out infinite;
+        }
+
+        .bokeh.hidden {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .bokeh:nth-child(1) {
+            width: 140px;
+            height: 140px;
+            background: radial-gradient(circle, rgba(126, 140, 216, 0.6) 0%, rgba(126, 140, 216, 0.2) 40%, transparent 80%);
+            top: 15%;
+            left: 5%;
+            animation-delay: 0s;
+            animation-duration: 25s;
+            animation: float 25s ease-in-out infinite;
+        }
+
+        .bokeh:nth-child(2) {
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, rgba(118, 135, 208, 0.5) 0%, rgba(118, 135, 208, 0.15) 50%, transparent 85%);
+            top: 75%;
+            left: 85%;
+            animation-delay: 3s;
+            animation-duration: 30s;
+            animation: float 30s ease-in-out infinite;
+        }
+
+        .bokeh:nth-child(3) {
+            width: 85px;
+            height: 85px;
+            background: radial-gradient(circle, rgba(134, 145, 224, 0.6) 0%, rgba(134, 145, 224, 0.2) 45%, transparent 80%);
+            top: 35%;
+            left: 65%;
+            animation-delay: 7s;
+            animation-duration: 22s;
+            animation: float 22s ease-in-out infinite;
+        }
+
+        .bokeh:nth-child(4) {
+            width: 160px;
+            height: 160px;
+            background: radial-gradient(circle, rgba(122, 138, 212, 0.5) 0%, rgba(122, 138, 212, 0.15) 50%, transparent 85%);
+            top: 85%;
+            left: 15%;
+            animation-delay: 2s;
+            animation-duration: 28s;
+            animation: float 28s ease-in-out infinite;
+        }
+
+        .bokeh:nth-child(5) {
+            width: 70px;
+            height: 70px;
+            background: radial-gradient(circle, rgba(130, 142, 220, 0.6) 0%, rgba(130, 142, 220, 0.2) 45%, transparent 80%);
+            top: 10%;
+            left: 75%;
+            animation-delay: 8s;
+            animation-duration: 24s;
+            animation: float 24s ease-in-out infinite;
+        }
+
+        .bokeh:nth-child(6) {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(120, 136, 210, 0.5) 0%, rgba(120, 136, 210, 0.15) 50%, transparent 85%);
+            top: 65%;
+            left: 35%;
+            animation-delay: 5s;
+            animation-duration: 26s;
+            animation: float 26s ease-in-out infinite;
+        }
+
+        .bokeh:nth-child(7) {
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(128, 140, 218, 0.6) 0%, rgba(128, 140, 218, 0.2) 45%, transparent 80%);
+            top: 25%;
+            left: 45%;
+            animation-delay: 1s;
+            animation-duration: 23s;
+            animation: float 23s ease-in-out infinite;
+        }
+
+        .bokeh:nth-child(8) {
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, rgba(124, 137, 214, 0.5) 0%, rgba(124, 137, 214, 0.15) 50%, transparent 85%);
+            top: 90%;
+            left: 60%;
+            animation-delay: 6s;
+            animation-duration: 27s;
+            animation: float 27s ease-in-out infinite;
         }
 
         .nav-container {
@@ -162,13 +296,20 @@
             border-radius: 50%;
             aspect-ratio: 1;
             object-fit: cover;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             margin: 0;
+            cursor: pointer;
         }
 
         .profile-image:hover {
             transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .profile-image.bokeh-active {
+            box-shadow: 0 8px 25px var(--accent-color);
+            border: 3px solid var(--accent-color);
         }
 
         .content {
@@ -240,6 +381,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Bokeh background circles -->
+    <div class="bokeh"></div>
+    <div class="bokeh"></div>
+    <div class="bokeh"></div>
+    <div class="bokeh"></div>
+    <div class="bokeh"></div>
+    <div class="bokeh"></div>
+    <div class="bokeh"></div>
+    <div class="bokeh"></div>
+    
     <div class="nav-container">
         <nav>
             <h1 class="nav-name">Ansh Sharma</h1>
@@ -258,8 +409,8 @@
     <div class="container">
         <div class="profile-section">
             <div class="image-container">
-                <img src="./images/avatar.png" alt="Ansh Sharma" class="profile-image">
-       </div>
+                <img src="./images/avatar.png" alt="Ansh Sharma" class="profile-image" onclick="toggleBokeh()" title="Click for a surprise!">
+            </div>
             <div class="content">
                 <p>
                     Hi! I'm broadly interested in working on ML applications that can have 
@@ -296,6 +447,30 @@
         const savedTheme = localStorage.getItem('theme') || 
             (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         document.body.dataset.theme = savedTheme;
+
+        // Function to toggle bokeh effect
+        function toggleBokeh() {
+            const bokehCircles = document.querySelectorAll('.bokeh');
+            const profileImage = document.querySelector('.profile-image');
+            
+            // Check if any bokeh is currently visible
+            const isCurrentlyVisible = bokehCircles[0].classList.contains('visible');
+            
+            bokehCircles.forEach(circle => {
+                if (isCurrentlyVisible) {
+                    circle.classList.remove('visible');
+                } else {
+                    circle.classList.add('visible');
+                }
+            });
+            
+            // Update profile image styling
+            profileImage.classList.toggle('bokeh-active');
+            
+            // Debug log
+            console.log('Bokeh toggled:', isCurrentlyVisible ? 'OFF' : 'ON');
+            console.log('Bokeh elements found:', bokehCircles.length);
+        }
     </script>
 </body>
 </html>
