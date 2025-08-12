@@ -16,17 +16,19 @@
 </script>
 
     <style>
+        /* Define CSS custom properties with default values */
         :root {
             --bg-color: #ffffff;
-            --text-color: #333333;
+            --text-color: #333;
             --accent-color: #7E8CD8;
             --link-color: #5D6EC0;
             --hover-color: #9EA5EC;
-            --nav-bg: rgba(126, 140, 216, 0.1);
-            --dot-color-1: rgba(126, 140, 216, 0.4);
-            --dot-color-2: rgba(158, 165, 236, 0.3);
+            --nav-bg: rgba(126, 140, 216, 0.2);
+            --dot-color-1: rgba(126, 140, 216, 0.3);
+            --dot-color-2: rgba(94, 110, 192, 0.2);
         }
 
+        /* Dark theme variables */
         [data-theme="dark"] {
             --bg-color: #1a1a1a;
             --text-color: #ffffff;
@@ -439,17 +441,35 @@
 
     <script>
         function toggleTheme() {
-            const currentTheme = document.body.dataset.theme;
+            const body = document.body;
+            const currentTheme = body.dataset.theme;
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             
-            document.body.dataset.theme = newTheme;
+            body.dataset.theme = newTheme;
             localStorage.setItem('theme', newTheme);
+            
+            // Force a re-render on mobile by triggering a repaint
+            body.style.display = 'none';
+            body.offsetHeight; // Force reflow
+            body.style.display = '';
+            
+            // Update theme button text
+            updateThemeButtonText();
+        }
+
+        function updateThemeButtonText() {
+            const themeBtn = document.getElementById('themeBtn');
+            const isDark = document.body.dataset.theme === 'dark';
+            themeBtn.textContent = isDark ? '☀️' : '🌙';
         }
 
         // Load saved theme preference
-        const savedTheme = localStorage.getItem('theme') || 
-            (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-        document.body.dataset.theme = savedTheme;
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 
+                (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+            document.body.dataset.theme = savedTheme;
+            updateThemeButtonText();
+        });
 
         // Function to toggle bokeh effect
         function toggleBokeh() {
