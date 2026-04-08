@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photo Gallery | Ansh Sharma</title>
     <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin>
+    <link rel="dns-prefetch" href="https://lh3.googleusercontent.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSBRJLRESB"></script>
@@ -53,6 +57,21 @@
             animation: gradientShift 20s ease infinite;
             color: var(--text-color);
             transition: background-color 0.3s, color 0.3s;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            body {
+                animation: none;
+            }
+
+            .gallery-item,
+            .gallery-item img,
+            .back-link,
+            .theme-toggle,
+            .year-group a,
+            .section-nav-links a {
+                transition: none;
+            }
         }
 
         @keyframes gradientShift {
@@ -146,6 +165,8 @@
             grid-template-columns: repeat(var(--items-per-row), 1fr);
             gap: 1.5rem;
             margin-top: 2rem;
+            content-visibility: auto;
+            contain-intrinsic-size: 1000px;
         }
 
         .gallery-item {
@@ -163,6 +184,7 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s;
+            background-color: rgba(0, 0, 0, 0.06);
         }
 
         .gallery-item:hover img {
@@ -199,12 +221,41 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            cursor: default;
         }
 
         .modal-content img {
             max-width: 100%;
             max-height: 90vh;
             object-fit: contain;
+        }
+
+        .modal-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 1.6rem;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .modal-nav:hover {
+            background: rgba(255, 255, 255, 0.35);
+        }
+
+        .modal-prev {
+            left: 1rem;
+        }
+
+        .modal-next {
+            right: 1rem;
         }
 
         @media (max-width: 768px) {
@@ -243,9 +294,10 @@
             opacity: 0.5;
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet"></noscript>
 </head>
-<body>
+<body id="top">
     <div class="container">
         <div class="header">
             <a href="index.html" class="back-link">← Back to Home</a>
@@ -264,6 +316,10 @@
         <div class="grouped-nav">
             <h3 class="nav-title">Jump to:</h3>
             <div class="year-groups-wrapper">
+                <div class="year-group">
+                    <h4>2026</h4>
+                    <a href="#spring26">Spring</a>
+                </div>
                 <div class="year-group">
                     <h4>2025</h4>
                     <a href="#spring25">Spring</a>
@@ -353,8 +409,33 @@
             }
         </style>
         <div class="section-header">
+            <h2 class="section-title" id="spring26">Spring 26</h2>
+            <div class="section-nav-links">
+                <a href="#winter25">↓ Next</a>
+                <span>|</span>
+                <a href="#top">↑ Top</a>
+            </div>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMebwm56qqp9huM2b_66gjvHonllxM8FxR0IdKbrIaj7FN-wTuGTywIMINAGVJclUY3TNGGCTQaAwFdylG1T0dL_NpztnP_BNAFfP1A5-GHA2BGVMkE=w1920-h1080" alt="Spring 26"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPtl8b0D_5mglzTrY0TKK88UpzMatcJcHdsx8EzbxsQrp0ICTE15zogOGN4wKufRySgoQR-a-KThWcrr19gseN1PojwgExRI4_rWJ14W61MBwwh3FE8=w1920-h1080" alt="Spring 26"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPOJb1vhHlXuVQrgQjkdBEuvbmEu5sLU4ii7gPRyQgNQrIniMJ5hwoqWxzYepQ9zAxBZCNCm23jvitxWHUKxrpidtyleGwlWi7mHQzW6KqFb4uI_g0J=w1920-h1080" alt="Spring 26"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMcXMkDF9Pld9wmx2ViXZc6b85_PQ--N6UYUKKaX0ONF4f8ynu93MAwgz6AkXjx1dvGl3mtk7h9tcFxa-YOQbsxbzU_G6M9dF2THepxMfQhvMvrnoF3=w1920-h1080" alt="Spring 26"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPKpquzv8_Fsqnvv_w8LASy8OMmcskuQuDaLUXRf_0aHiINyXiNQtFxKn2HdceiRn6hHJjWenjx3qHQ8hYevBD4UhoKAOb3Ivx8OvpkUsc4ue8saVYz=w1920-h1080" alt="Spring 26"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPjBtDwxFCa1ctjYwhwnHuURp9w5tTJXzaXfo3LUqyjiyw-uqV_AwUSxyX7dRhR4s_y7izXF-UN6-hCRjY4MaazwaQK6xhPou3XSWOsRhK1QBC_6PrX=w1920-h1080" alt="Spring 26"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczM0NeWyJLBKJO6y0oQ37ljS4iSkv4HLIxsHU0Pz9r4Yw6gf5zc0avHVYMTNrePN9KQPARC8lMcEyZ218UI4Le3_6AGLJWLRMk3rPySjuykfmlOA1jcX=w1920-h1080" alt="Spring 26"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNSKM8w9_bU1o0iFRPy5b9mljfLe-8iEFjrPvman7_FmNGF2KzaiYHDH7G3BD3VSEUJodZr9MRXKw59L0xBeTkrSTYy0ZNRwyKDIWPqPfIzIFuKPzg4=w1920-h1080" alt="Spring 26"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNSZy6G_W5Fm_d37pF73313N_Wfd89jty4fYqrjCjt0myjhi_gvWkRVmFPXjbQe-r9RhmGejIF6cg7ytzixRxQ0ty1DREzv8wJKoGmvJiAb9IM4fD_1=w1920-h1080" alt="Spring 26"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNh1BPJAG4Aoo6nhbnU63rlNbWjwhjoSeJ9O3CiR4eYUAJ-mfEmlHW113Z4M-Z0Jx7NrDXEyVeU1WWKZ_3qSjuv3ktJIeaORq4cvOi_YgD4F5b7Lj1Z=w1920-h1080" alt="Spring 26"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczOLVOodyhxRc3DcsLRMy-bkUGOV5HhvtmwYCvYQ1DsJcgE8jitgxTdk-QYoOf6J0DLZGa7xRSAGMggrnkcHf7bX3EdmrrhrlywSJfXdB_S5w7JEnHpb=w1920-h1080" alt="Spring 26"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczOj1RhA1AEgs_BkiVPPsAqfwcc4dSK3GNg52LU_1qX5JEUcppfN-YUTi7e3TmVicDAmbbfrzTC_Ilam4OFmWag4BV_wYB5PnqwUKfYFn6ZE9jQaTW-i=w1920-h1080" alt="Spring 26"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPv4ul0wgcKAzpJADjJXmRcWd3ebHvlGJymXzb_5ewpAaRxlGHEwVsC9gNP1REs-stylQJQCGiH7aw3FjHvKZ-EO5Ov5u-w5nVTvrYADsnnWGGrLemv=w1920-h1080" alt="Spring 26"></div>
+        </div>
+        <div class="section-header">
             <h2 class="section-title" id="winter25">Winter 25</h2>
             <div class="section-nav-links">
+                <a href="#spring26">↑ Previous</a>
+                <span>|</span>
                 <a href="#fall25">↓ Next</a>
                 <span>|</span>
                 <a href="#top">↑ Top</a>
@@ -1285,7 +1366,9 @@
     </div>
     </div>
   <div class="modal" id="imageModal">
+      <button class="modal-nav modal-prev" id="modalPrev" aria-label="Previous photo">❮</button>
       <img class="modal-content" id="modalImage">
+      <button class="modal-nav modal-next" id="modalNext" aria-label="Next photo">❯</button>
   </div>
   <script>
       // Theme toggle functionality
@@ -1303,17 +1386,120 @@
       // Modal functionality
       const modal = document.getElementById('imageModal');
       const modalImg = document.getElementById('modalImage');
-      const galleryItems = document.querySelectorAll('.gallery-item');
+    const modalPrev = document.getElementById('modalPrev');
+    const modalNext = document.getElementById('modalNext');
 
-      galleryItems.forEach(item => {
-          item.addEventListener('click', function() {
-              modal.style.display = "block";
-              modalImg.src = this.querySelector('img').src;
+      function optimizedGooglePhotoUrl(url, width, height) {
+          const sizeSuffixPattern = /=w\d+-h\d+$/;
+          const optimizedSuffix = `=w${width}-h${height}`;
+
+          if (sizeSuffixPattern.test(url)) {
+              return url.replace(sizeSuffixPattern, optimizedSuffix);
+          }
+
+          return `${url}${optimizedSuffix}`;
+      }
+
+      function optimizeGalleryImages() {
+          const galleryImages = document.querySelectorAll('.gallery-item img');
+
+          galleryImages.forEach((img, index) => {
+              const fullImageSrc = img.dataset.fullSrc || img.src;
+              const isAboveTheFold = index < 8;
+
+              img.dataset.fullSrc = fullImageSrc;
+              img.src = optimizedGooglePhotoUrl(fullImageSrc, 640, 640);
+              img.loading = isAboveTheFold ? 'eager' : 'lazy';
+              img.decoding = 'async';
+              img.fetchPriority = isAboveTheFold ? 'high' : 'low';
+              img.referrerPolicy = 'no-referrer';
+
+              if (!img.alt) {
+                  img.alt = 'Season photo';
+              }
           });
+      }
+
+      optimizeGalleryImages();
+      const galleryImages = Array.from(document.querySelectorAll('.gallery-item img'));
+      let currentModalIndex = -1;
+
+      function openModalAtIndex(index) {
+          if (index < 0 || index >= galleryImages.length) {
+              return;
+          }
+
+          currentModalIndex = index;
+          const selectedImage = galleryImages[currentModalIndex];
+          modal.style.display = "block";
+          modalImg.src = selectedImage.dataset.fullSrc || selectedImage.src;
+          modalImg.alt = selectedImage.alt || 'Season photo';
+      }
+
+      function stepModal(direction) {
+          if (currentModalIndex === -1 || !galleryImages.length) {
+              return;
+          }
+
+          const total = galleryImages.length;
+          const nextIndex = (currentModalIndex + direction + total) % total;
+          openModalAtIndex(nextIndex);
+      }
+
+      function closeModal() {
+          modal.style.display = "none";
+          currentModalIndex = -1;
+      }
+
+      document.addEventListener('click', function(event) {
+          const galleryItem = event.target.closest('.gallery-item');
+          if (!galleryItem) {
+              return;
+          }
+
+          const clickedImage = galleryItem.querySelector('img');
+          if (!clickedImage) {
+              return;
+          }
+
+          const clickedIndex = galleryImages.indexOf(clickedImage);
+          if (clickedIndex !== -1) {
+              openModalAtIndex(clickedIndex);
+          }
       });
 
-      modal.addEventListener('click', function() {
-          modal.style.display = "none";
+      modal.addEventListener('click', function(event) {
+          if (event.target === modal) {
+              closeModal();
+          }
+      });
+
+      modalImg.addEventListener('click', function(event) {
+          event.stopPropagation();
+      });
+
+      modalPrev.addEventListener('click', function(event) {
+          event.stopPropagation();
+          stepModal(-1);
+      });
+
+      modalNext.addEventListener('click', function(event) {
+          event.stopPropagation();
+          stepModal(1);
+      });
+
+      document.addEventListener('keydown', function(event) {
+          if (modal.style.display !== "block") {
+              return;
+          }
+
+          if (event.key === 'Escape') {
+              closeModal();
+          } else if (event.key === 'ArrowLeft') {
+              stepModal(-1);
+          } else if (event.key === 'ArrowRight') {
+              stepModal(1);
+          }
       });
   </script>
 </body>

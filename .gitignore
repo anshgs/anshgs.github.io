@@ -1,0 +1,3 @@
+# Local-only helper scripts and temporary files
+scripts/local/
+temp/
