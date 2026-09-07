@@ -13,7 +13,24 @@
     const next = document.getElementById('viewerNext');
     const zoom = document.getElementById('viewerZoom');
     let album, position = 0, opener, previousOverflow, touchStart, suppressClickUntil = 0;
-    let preload = [];
+    let requestVersion = 0;
+    // Keep a bounded cache; prefetch only after the selected photo is ready.
+    const fullImages = new Map();
+    function loadFull(src, priority = 'low') {
+        if (fullImages.has(src)) return fullImages.get(src);
+        const pending = new Promise((resolve, reject) => {
+            const loaded = new Image();
+            loaded.referrerPolicy = 'no-referrer';
+            loaded.fetchPriority = priority;
+            loaded.onload = () => resolve(loaded);
+            loaded.onerror = reject;
+            loaded.src = src;
+        });
+        fullImages.set(src, pending);
+        pending.catch(() => fullImages.delete(src));
+        if (fullImages.size > 8) fullImages.delete(fullImages.keys().next().value);
+        return pending;
+    }
 
     function resetZoom() {
         stage.classList.remove('zoomed');
@@ -28,18 +45,24 @@
         title.textContent = `${album.heading.textContent} · ${position + 1} / ${album.images.length}`;
         previous.disabled = position === 0;
         next.disabled = position === album.images.length - 1;
-        status.textContent = 'Loading photo…';
+        const version = ++requestVersion;
+        status.textContent = 'Loading sharp image…';
         photo.alt = `${album.heading.textContent}, photo ${position + 1}`;
-        photo.src = image.dataset.fullSrc || image.src;
-        preload = [position - 1, position + 1].filter(i => album.images[i]).map(i => {
-            const cached = new Image();
-            cached.referrerPolicy = 'no-referrer';
-            cached.src = album.images[i].dataset.fullSrc || album.images[i].src;
-            return cached;
+        // Reuse the browser's already selected thumbnail immediately.
+        photo.src = image.currentSrc || image.src;
+        const full = image.dataset.fullSrc || image.src;
+        loadFull(full, 'high').then(() => {
+            if (version !== requestVersion || !viewer.open) return;
+            photo.src = full;
+            status.textContent = '';
+            [position - 1, position + 1].filter(i => album.images[i]).forEach(i => {
+                const neighbor = album.images[i];
+                loadFull(neighbor.dataset.fullSrc || neighbor.src).catch(() => {});
+            });
+        }).catch(() => {
+            if (version === requestVersion && viewer.open) status.textContent = 'Preview shown. Full-size photo could not load.';
         });
     }
-    photo.addEventListener('load', () => { status.textContent = ''; });
-    photo.addEventListener('error', () => { status.textContent = 'This photo could not load. Try another photo or reopen it.'; });
     function open(image) {
         album = sections.find(section => section.images.includes(image));
         if (!album) return;
@@ -72,6 +95,7 @@
     next.addEventListener('click', () => step(1));
     document.getElementById('viewerClose').addEventListener('click', () => viewer.close());
     viewer.addEventListener('close', () => {
+        requestVersion++;
         document.body.style.overflow = previousOverflow;
         resetZoom();
         photo.removeAttribute('src');
