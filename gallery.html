@@ -9,7 +9,7 @@
     <link rel="dns-prefetch" href="https://lh3.googleusercontent.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSBRJLRESB"></script>
     <script>
@@ -49,7 +49,7 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background: 
+            background:
                 radial-gradient(circle at 100% 50%, var(--dot-color-1) 1px, transparent 1px) 0 0/30px 30px,
                 radial-gradient(circle at 0% 50%, var(--dot-color-2) 1px, transparent 1px) 15px 15px/30px 30px,
                 radial-gradient(circle at 50% 50%, var(--dot-color-1) 0.7px, transparent 0.7px) 7.5px 7.5px/15px 15px,
@@ -201,63 +201,6 @@
             background: rgba(155, 107, 155, 0.2);
         }
 
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-            cursor: pointer;
-        }
-
-        .modal-content {
-            max-width: 90%;
-            max-height: 90vh;
-            margin: auto;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            cursor: default;
-        }
-
-        .modal-content img {
-            max-width: 100%;
-            max-height: 90vh;
-            object-fit: contain;
-        }
-
-        .modal-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            border: none;
-            width: 44px;
-            height: 44px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.2);
-            color: #fff;
-            font-size: 1.6rem;
-            line-height: 1;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        .modal-nav:hover {
-            background: rgba(255, 255, 255, 0.35);
-        }
-
-        .modal-prev {
-            left: 1rem;
-        }
-
-        .modal-next {
-            right: 1rem;
-        }
-
         @media (max-width: 768px) {
             .gallery-grid {
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -296,119 +239,41 @@
     </style>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet"></noscript>
-</head>
-<body id="top">
-    <div class="container">
-        <div class="header">
-            <a href="index.html" class="back-link">← Back to Home</a>
-            <button class="theme-toggle" onclick="toggleTheme()">
-                <svg class="sun-icon" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="5"/>
-                    <path d="m12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"/>
-                </svg>
-                <svg class="moon-icon" viewBox="0 0 24 24" style="display: none;">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                </svg>
-            </button>
-        </div>
-
-        <!-- Add section navigation -->
-        <div class="grouped-nav">
-            <h3 class="nav-title">Jump to:</h3>
-            <div class="year-groups-wrapper">
-                <div class="year-group">
-                    <h4>2026</h4>
-                    <a href="#spring26">Spring</a>
-                    <a href="#summer26">Summer</a>
-                </div>
-                <div class="year-group">
-                    <h4>2025</h4>
-                    <a href="#spring25">Spring</a>
-                    <a href="#summer25">Summer</a>
-                    <a href="#fall25">Fall</a>
-                    <a href="#winter25">Winter</a>
-                </div>
-                <div class="year-group">
-                    <h4>2024</h4>
-                    <a href="#spring24">Spring</a>
-                    <a href="#summer24">Summer</a>
-                    <a href="#fall24">Fall</a>
-                    <a href="#winter24">Winter</a>
-                </div>
-                <div class="year-group">
-                    <h4>2023</h4>
-                    <a href="#spring23">Spring</a>
-                    <a href="#summer23">Summer</a>
-                    <a href="#fall23">Fall</a>
-                </div>
-                <div class="year-group">
-                    <h4>2022</h4>
-                    <a href="#spring22">Spring</a>
-                    <a href="#summer22">Summer</a>
-                    <a href="#fall22">Fall</a>
-                </div>
-                <div class="year-group">
-                    <h4>2021</h4>
-                    <a href="#summer21">Summer</a>
-                    <a href="#fall21">Fall</a>
-                </div>
-            </div>
-        </div>
-        <!-- https://www.publicalbum.org/blog/embedding-google-photos-albums -->
-        <!-- Add styles for section navigation -->
-        <style>
-            /* The main container for the entire navigation bar */
-            .grouped-nav {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                gap: 2rem;
-                padding: 1.2rem 2rem;
-                margin-bottom: 2rem;
-                background: var(--nav-bg);
-                border-radius: 10px;
-                backdrop-filter: blur(10px);
-            }
-            
-            /* The "Jump to:" title on the left */
-            .nav-title {
-                margin: 0;
-                padding-top: 0.15rem; /* Helps vertically align with year headers */
-                font-size: 1.2rem;
-                color: var(--text-color);
-                flex-shrink: 0; /* Prevents the title from shrinking if space is tight */
-            }
-        
-            /* A wrapper for all the year group columns */
-            .year-groups-wrapper {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 2.5rem;
-                justify-content: flex-end; /* Aligns the columns to the right */
-            }
-        
-            /* Styling for each individual year column */
-            .year-group h4 {
-                margin: 0 0 0.5rem 0;
-                font-size: 1.1rem;
-                color: var(--text-color);
-                border-bottom: 1px solid var(--accent-color);
-                padding-bottom: 0.25rem;
-            }
-        
-            .year-group a {
-                color: var(--link-color);
-                text-decoration: none;
-                display: block;
-                padding: 0.2rem 0;
-                transition: all 0.3s;
-            }
-        
-            .year-group a:hover {
-                color: var(--hover-color);
-                transform: translateX(3px);
-            }
-        </style>
+    <link rel="stylesheet" href="gallery-viewer.css">
+<link rel="stylesheet" href="gallery-sidebar.css"><script src="gallery-theme.js"></script></head>
+<body id="top" class="original-gallery">
+<aside class="archive-sidebar">
+<div class="sidebar-header"><a class="archive-brand" href="index.html">Ansh Sharma</a>
+<button class="sidebar-theme" onclick="toggleTheme()" aria-label="Switch color theme">
+<svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+<svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15A8 8 0 0 1 9 4a8 8 0 1 0 11 11Z"/></svg>
+</button></div>
+<nav class="archive-seasons" aria-label="Photo seasons"><div class="archive-year">2026</div>
+<a href="#summer26">Summer 26</a>
+<a href="#spring26">Spring 26</a>
+<div class="archive-year">2025</div>
+<a href="#winter25">Winter 25</a>
+<a href="#fall25">Fall 25</a>
+<a href="#summer25">Summer 25</a>
+<a href="#spring25">Spring 25</a>
+<div class="archive-year">2024</div>
+<a href="#winter24">Winter 24</a>
+<a href="#fall24">Fall 24</a>
+<a href="#summer24">Summer 24</a>
+<a href="#spring24">Spring 24</a>
+<div class="archive-year">2023</div>
+<a href="#fall23">Fall 23</a>
+<a href="#summer23">Summer 23</a>
+<a href="#spring23">Spring 23</a>
+<div class="archive-year">2022</div>
+<a href="#fall22">Fall 22</a>
+<a href="#summer22">Summer 22</a>
+<a href="#spring22">Spring 22</a>
+<div class="archive-year">2021</div>
+<a href="#fall21">Fall 21</a>
+<a href="#summer21">Summer 21</a></nav>
+<div class="sidebar-bottom"><div class="gallery-remaining" id="galleryRemaining" role="progressbar" aria-label="Gallery remaining" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><span class="gallery-remaining-fill"></span></div><a href="#top" aria-label="Back to top">↑</a><div class="timeline-caption"><span id="timelineSeason">Summer 26</span></div></div></aside>
+<div class="container">
         <div class="section-header">
             <h2 class="section-title" id="summer26">Summer 26</h2>
             <div class="section-nav-links">
@@ -421,7 +286,6 @@
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczM7La15b6gJ6jN7W-_f3IeQir7WcvJZUhW8NMFQnOlW5OBDTsAgyDdwLbgr9t3U-YjOglpWZCn2EzCTcY9DGYUHiegDN1NQUPpvAeLo9BWWy4RlULgU=w1920-h1080" alt="Summer 26"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczOMAsqkMwuxm_ncs-MX9FOzBkdgvzusxQrNjKkX4jX6oYgE7YcBD1IyD2wSLuqduWYTkckuFUoW-X4hEwdsZxcC0yUhy0uslP7Xybo9J4h5PY5CvphX=w1920-h1080" alt="Summer 26"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMlmwcKvn0Dp2RthacQFnb5DizBzg5bOsUbqk7JN3YARNDN_-o4JRCetiiM91YrEXfylXKAIvNTNI2In8Lz8D1haJdnlgGcHJv7jZe9CDrSUVXgqihk=w1920-h1080" alt="Summer 26"></div>
-            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczM-JxP5sIJy7A9AO3L9md1DO-GekFjT_96L-c3uvbTcjyhzhfiT9CqlcwaTbuAb6quGVsT2AvmJb2HaPDAXPfpMhoPpG3Bih-D7L1_fhaWR_Wp5FXeb=w1920-h1080" alt="Summer 26"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczP5Fh_Vaoj9XMm-hq9SAM2htT3PW_Z7dMjwzfn6suEO1PE-sTqzA7YRIFzYFVzSSYpdMVFIyoqR3hbr3Ho7xc7xUM5G86mWHCnYfwFHT94N95w6qi4P=w1920-h1080" alt="Summer 26"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczN9Obw3iwQ4z4Nu-IDkyDH1RS1qQsuQYiwjbbLGvys8EDgBG0Il0SiDSYDV2eD6jnboqtojyy031Tahu8vdB54UkyOizkF174_e4hMRYQGb0jZvpHa0=w1920-h1080" alt="Summer 26"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczOVZiyXQ4nF37dfgGsKJyLPaP6XD71_bziJlH1EPe2oxADC6GhcsOdBbeIsAU9zIr3u4EelEvUmNHDmixWvZjxH3SNzVipcB4UbJ4atmB8GXIo1nm_5=w1920-h1080" alt="Summer 26"></div>
@@ -432,7 +296,6 @@
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPQVt-dEPYfRjywkVW5xtu4nZj7FNflh7YWjIv8JQylU0I24AkUI-InkLf5Ed4LmVnxx6uJTddUx0SvpMLW35z-U-LekPpkQfxmU4sIaz-nkvYNIlOF=w1920-h1080" alt="Summer 26"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczOclSHIdw-dFzt_RK3AlSnbo2ay6PC8y77VYNaAyYJDNyPZzg8307hhdMLZz-vvNqCLKi5We5N6iIBzKJeNKYTHJtsyZQusYXUdOVCeKcCeenWQI5du=w1920-h1080" alt="Summer 26"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPte-GHCLpYF1zwEFe77is6Rip7uyPE61ylo2J82YVqHreNauwzwGRlwVn4kujV0HMq0gA0KjnefXf30KbqqQNDf5Z-wwIatfC-WhhYFozP8C80Nlik=w1920-h1080" alt="Summer 26"></div>
-            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczM9cqqATAn4v5VOwYb1Wh1qB4if0j3FuBt4G5K1xnjg5nsiYvZ3o3EiI0d2_nSQJwQoZLRlJBNBApsa9ygZTbh1chNrjmaTMT7kfxBGF0EFoEPkwDoz=w1920-h1080" alt="Summer 26"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczP4niM9VLfcDgAC2uT0l_I00u7RUq90o4b5NyLC5DIxEe_XKWvtLDB6aJk42K41USpd0iPmEm1b0AbFIsLdbMKGmSlu7tNdHLFELfUQaGAnV5cgvkT1=w1920-h1080" alt="Summer 26"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczO2zz59H934CwiOZtkhFigKRQl9ypc3yaUXcEYVf6c-ToRjvHtjntZsptecqTtGbQJnlrpdnffj0JuTursQmW_SoCGRpvRX0zW9FM86EXReeN5SN9SY=w1920-h1080" alt="Summer 26"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMaGyvd-JNA5OKGQtZLDeLMyCDRUQSppE0YmrKIOf_qZZOPyfc36oSuWIcyyFS_EZeyPoOzqNWpUNyyOpBlNrU7nyZpLiksU-9S8mHEyP1zklIy1mAJ=w1920-h1080" alt="Summer 26"></div>
@@ -440,11 +303,13 @@
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNBDU49VqltILhoS4HpknzFMJyfZEkRHyAyOPnoj0pydcpNNr0Y9xhGflDT0z9IC7u_QH9VnFOTHRedV_k3IaltyvLjSO7p9L8HeamOrqRAgP-srxJ2=w1920-h1080" alt="Summer 26"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczOIn3etyXj7QgpXh3dZRkrop6DEZY5s-0GoS8AwIncONF8VHeswPBzsdRPZQG77-hwBJ2QZYmkpdOhNa9lg67niTuP47o2pbkjorpMvPrBg8IGWaweI=w1920-h1080" alt="Summer 26"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPXIH_Q5dClYKXqJiOuvAVgR2_XoF7VnAZPhWmoHXXWXWRjmPQK9urieJT4GeuPTaY_l-ntFKSZvvCi1AuQJsOox1NqFhgIQpKSwmDbuIpXPCAg-0NT=w1920-h1080" alt="Summer 26"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPcMSCgtbXXU_OamF3xYffJbARs6YNT8nTX73ETrb7qT0PIJR-b3H7hs6bk2OCFEhNxCm00LlOllXx1bdmQqEZ3md7Rz-MsXv1bbWRvZmJWd9sc-wmz=w1920-h1080" alt="Summer 26"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPgnkzks0P2Ues7IWtxXWqX_y0NCuUGAdqN1Pz4-79uLfPpa1vdwVTO2dmOpLkZfMp9mYtl0_wTs04URDvHpnGAL2hVUnoPXDaDNSBqh_XlFYEKHhQ9=w1920-h1080" alt="Summer 26"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczOcy7JGy3Z1Dm9ejnE3Zbq65vC7JPrcMHWimQDT8YraBOHY1_w2gCL94xsAmsaoslb1zQI-3mlGMeOgZJehtioptBTc0nrwuCNMSOl5tqBJR5pdHD1m=w1920-h1080" alt="Summer 26"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNYd1SP9xXaLO__0qjMyB7P5v_VDY70EcmAyF3oGQVQjWVIzx2XdevX-e9ohMlg0TXWI2ygt6yZb-TwzPZAiLxsPpoQDnJa2stk1lX2Ng5_ElBZXKle=w1920-h1080" alt="Summer 26"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNZNjn73yQjn2JoGNo39vM1sWbixrbAtMdCYBXk1hG7PGbc_kv_1y6CvYut6aUocCOIVBII9af_qtvWAdQv7RTFjSqYAFiOxzfpX732Uf759gmwQ2OO=w1920-h1080" alt="Summer 26"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNbNEZ0Y_NmAbwgo1W77vx088izO6qObcNLNGKtvm6Jx77kQG6sCr3GYO9lGFXOzdfBthou_wUu1S8VAFDl5p8j6SwoAgQUmAYPktxkjNbao_Gp-w2E=w1920-h1080" alt="Summer 26"></div>
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczOa5oLJ6V9rQXuA2-9zsXY1puGFPL6eaw8H2EjDMtGEQY5BcLkOMI4I5NlFn7X8xCgRClraBpMzJBtVtIQlER1S4MlW7fw2bE17RPpWPfZIkbRyxx6e=w1920-h1080" alt="Summer 26"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMY_lI69h6RsvYbBkMxCXBmi2bSoA_d-xR6kFbYjqXqSLxlHmt45f2oJIxgOy0_-lcyZwoAy2Awj6xTiTx_Td3Ps03R0W9ERNVOIgWxqo9g2VVPGWd4=w1920-h1080" alt="Summer 26"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczM-J74R2BT4PFOXMs_e6OOI09g66_LyMGDuxP5U1BNmO1eUtTOt0lSwv-lazaAaqs3zY6APG-ttaAMkjv1p52It9qWRpeNbRlmdZ-V_OnVZp_XWhKA0=w1920-h1080" alt="Summer 26"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczO1iI_qLWK_YjZa7kreMl_ltkv96urXvOfgidEMOJwCCN_vxFtF2npKDPx2sov43_pd5qxpDnSuEAAcy15loS0vB_CWK2D5VGPDPwByaYpshBq843Uq=w1920-h1080" alt="Summer 26"></div>
@@ -656,7 +521,7 @@
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczOHsDqzN8Zo9Nxu2Cm7FLvrLY0-xe8o58hZJ66wi9sKJDnAI8mCv8Vi6ygIyq7kmnFc0fZuhDJWbrrQfLjhSBohDEZtOjRCUDOlsjQHZJp9xdL0wUjL=w1920-h1080" alt="Summer 25"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMw_3GMXRkZKZFmnuCe1-h4qa0HEF3djBVcM4A0oK7bA_mrZwW_ySzHwEujDiusYPkYBv3fLKIbcYCugdMSWDBI1kxbLtvO4zqd3FhudQ0WJskEkjiI=w1920-h1080" alt="Summer 25"></div>
 
-        
+
         </div>
         <div class="section-header">
             <h2 class="section-title" id="spring25">Spring 25</h2>
@@ -754,7 +619,7 @@
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczP6ymMWn-xQXduzEXA1x2Lv0SYZXdVxsqjviqPiyY3np0DQdYKrLOavA1uPUwdOSS45cUp6ILsC35T_UO4o55_g4PAxeEoLFCvJAPHousyWXn4Mw6KP=w1920-h1080" alt="Fall 24"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPGtFsiMl_UHcbk9HbvjhzjuvQmw67Pl8uHeARexuxyvDejbHZa3FIAe-agp3mfPGslkGPV3giCSvyVfukAv6brj-q27T7FbbCsvNN4ICaEjGUjkVwk=w1920-h1080" alt="Fall 24"></div>
             <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczO64jyKa6ePCIzPDfEAizsjP05_fNtg_wOjtG2-R37HY6ubezCDOnJ47eH2TOnzUUWusPtdzxJirK4SMtCRnfq4N38BhaF4Buj2fMoNyO_eKgrAERQc=w1920-h1080" alt="Fall 24"></div>
-            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPixso8qQxCrAZnBfHBDnmTPVbbRujb8Ru8AOfWQ53V98ZulDWJz230GxhQkJDIvfpLQZwn41RrKr-pgQmSZzPppcXzEjVkWMdSl8dNDHilwsAneDV-=w1920-h1080" alt="Fall 24"></div>       
+            <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPixso8qQxCrAZnBfHBDnmTPVbbRujb8Ru8AOfWQ53V98ZulDWJz230GxhQkJDIvfpLQZwn41RrKr-pgQmSZzPppcXzEjVkWMdSl8dNDHilwsAneDV-=w1920-h1080" alt="Fall 24"></div>
         </div>
 
         <div class="section-header">
@@ -877,7 +742,7 @@
               <a href="#top">↑ Top</a>
           </div>
       </div>
-      
+
       <div class="gallery-grid">
           <div class="gallery-item">
               <img src="https://lh3.googleusercontent.com/pw/ABLVV85Jg17nTYTBjcupRQmjZkTT3YD1DhGjzwjTZHGK2An9pj-RUz9AmAFpxQnCoSb-s19lLnLvovlYUO5Bgp0sBdtmjqHi5NU5oLBva_Ey-waeFDvr9QUR=w1920-h1080" alt="Fall 23">
@@ -927,7 +792,7 @@
               <a href="#top">↑ Top</a>
           </div>
       </div>
-      
+
       <div class="gallery-grid">
           <div class="gallery-item">
               <img src="https://lh3.googleusercontent.com/pw/AIL4fc-uS4G8NPMUftLlB7_8AVKsjGV5ye_UgqEZe0mnXJdz6MNBw94t_d_W6-LkP4E6PQsy7GxCYjXc3iBVrC7a5v_hZjNc_IikGB4L8i1MNR1X5y1NC6hf=w1920-h1080" alt="Summer 23">
@@ -1037,7 +902,7 @@
               <a href="#top">↑ Top</a>
           </div>
       </div>
-      
+
       <div class="gallery-grid">
           <div class="gallery-item">
               <img src="https://lh3.googleusercontent.com/pw/AIL4fc_6FEDOu1W2DJUxC-ymKgkox3Zu0q0Wng8ahrxEpuwDpVzSlQzB81VodMJRDchinwuPBPAFtuHa2zKTB0u1qnN-1kTMq0TIqDTzeG9Kj1KKXw_nK72d=w1920-h1080" alt="Spring 23">
@@ -1088,7 +953,7 @@
               <a href="#top">↑ Top</a>
           </div>
       </div>
-      
+
       <div class="gallery-grid">
           <div class="gallery-item">
               <img src="https://lh3.googleusercontent.com/pw/AIL4fc-_GXMXz9ZaxMZbEDhdwqmLd79JF06xBy6aj07KDUumlQQazc5SvQzyuE4Tp1BP9jfE0Jpn5kNw0woUbN0IeO2Csdo88vqUe-vJ44V9ESRJaNsFGSzi=w1920-h1080" alt="Fall 22">
@@ -1174,7 +1039,7 @@
               <a href="#top">↑ Top</a>
           </div>
       </div>
-      
+
       <div class="gallery-grid">
           <div class="gallery-item">
               <img src="https://lh3.googleusercontent.com/pw/AIL4fc9M0cFBXyltDSizBZDoejNvINqgsWMF040A5EtbyRke3A9bP06bRdbX4QA2q2SEjg02v2yEoitZmgzLTHBGN7uuE_Ebsdk5mmgJ4lPEBtFbi6Yt_kxg=w1920-h1080" alt="Summer 22">
@@ -1320,7 +1185,7 @@
               <a href="#top">↑ Top</a>
           </div>
       </div>
-      
+
       <div class="gallery-grid">
           <div class="gallery-item">
               <img src="https://lh3.googleusercontent.com/pw/AIL4fc_gkhdoIf9FirIgAjGGtpt5v88ogidzJrJQmoInM1vrIbriulhKEijUd0TiOX5i9kl2FpN9mwAqgOqVLJbtvsrJKUseLZ5bpeVB0uDGWDPWQ-U053Gy=w1920-h1080" alt="Spring 22">
@@ -1364,7 +1229,7 @@
               <a href="#top">↑ Top</a>
           </div>
       </div>
-      
+
       <div class="gallery-grid">
           <div class="gallery-item">
               <img src="https://lh3.googleusercontent.com/pw/AIL4fc_DyUI6UdBed4TQkojY_D8FugYyB_T9hvjZQ-yMxu-7E-bgRZvXYCXQTuh7gtCoTTtrzoV2TfwnsjTagLZJ3K8u52lP2wASK8bQ_8vb7YppUgIudhNU=w1920-h1080" alt="Fall 21">
@@ -1445,30 +1310,24 @@
         <div class="gallery-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczNyMkMtHYuQVHrpOxBbZZsiDwM9bVXZqyPCiBnaRY1SFT9WgDBEhePH4Lx944I9NTnKgIsczgkcDR6qzA1EME1zf7IL38LpWi1cejGiPVScDQMf4fmU=w1920-h1080"></div>
     </div>
     </div>
-  <div class="modal" id="imageModal">
-      <button class="modal-nav modal-prev" id="modalPrev" aria-label="Previous photo">❮</button>
-      <img class="modal-content" id="modalImage">
-      <button class="modal-nav modal-next" id="modalNext" aria-label="Next photo">❯</button>
-  </div>
+
+  <dialog class="photo-viewer" id="photoViewer" aria-labelledby="viewerTitle">
+      <div class="viewer-toolbar">
+          <h2 class="viewer-title" id="viewerTitle" aria-live="polite"></h2>
+          <div class="viewer-actions">
+              <button id="viewerZoom" type="button" aria-label="Zoom in" aria-pressed="false">+</button>
+              <button id="viewerClose" type="button" aria-label="Close photo viewer">×</button>
+          </div>
+      </div>
+      <div class="viewer-stage" id="viewerStage">
+          <img id="viewerPhoto" alt="" referrerpolicy="no-referrer" draggable="false">
+          <span class="viewer-status" id="viewerStatus" role="status"></span>
+      </div>
+      <button class="viewer-arrow viewer-prev" id="viewerPrevious" type="button" aria-label="Previous photo">‹</button>
+      <button class="viewer-arrow viewer-next" id="viewerNext" type="button" aria-label="Next photo">›</button>
+      <div class="viewer-footer">Swipe or use ← → · Click photo to zoom</div>
+  </dialog>
   <script>
-      // Theme toggle functionality
-      function toggleTheme() {
-          document.body.dataset.theme = 
-              document.body.dataset.theme === 'dark' ? 'light' : 'dark';
-          localStorage.setItem('theme', document.body.dataset.theme);
-      }
-
-      // Load saved theme preference
-      const savedTheme = localStorage.getItem('theme') || 
-          (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-      document.body.dataset.theme = savedTheme;
-
-      // Modal functionality
-      const modal = document.getElementById('imageModal');
-      const modalImg = document.getElementById('modalImage');
-    const modalPrev = document.getElementById('modalPrev');
-    const modalNext = document.getElementById('modalNext');
-
       function optimizedGooglePhotoUrl(url, width, height) {
           const sizeSuffixPattern = /=w\d+-h\d+$/;
           const optimizedSuffix = `=w${width}-h${height}`;
@@ -1501,87 +1360,8 @@
       }
 
       optimizeGalleryImages();
-      const galleryImages = Array.from(document.querySelectorAll('.gallery-item img'));
-      let currentModalIndex = -1;
-
-      function openModalAtIndex(index) {
-          if (index < 0 || index >= galleryImages.length) {
-              return;
-          }
-
-          currentModalIndex = index;
-          const selectedImage = galleryImages[currentModalIndex];
-          modal.style.display = "block";
-          modalImg.src = selectedImage.dataset.fullSrc || selectedImage.src;
-          modalImg.alt = selectedImage.alt || 'Season photo';
-      }
-
-      function stepModal(direction) {
-          if (currentModalIndex === -1 || !galleryImages.length) {
-              return;
-          }
-
-          const total = galleryImages.length;
-          const nextIndex = (currentModalIndex + direction + total) % total;
-          openModalAtIndex(nextIndex);
-      }
-
-      function closeModal() {
-          modal.style.display = "none";
-          currentModalIndex = -1;
-      }
-
-      document.addEventListener('click', function(event) {
-          const galleryItem = event.target.closest('.gallery-item');
-          if (!galleryItem) {
-              return;
-          }
-
-          const clickedImage = galleryItem.querySelector('img');
-          if (!clickedImage) {
-              return;
-          }
-
-          const clickedIndex = galleryImages.indexOf(clickedImage);
-          if (clickedIndex !== -1) {
-              openModalAtIndex(clickedIndex);
-          }
-      });
-
-      modal.addEventListener('click', function(event) {
-          if (event.target === modal) {
-              closeModal();
-          }
-      });
-
-      modalImg.addEventListener('click', function(event) {
-          event.stopPropagation();
-      });
-
-      modalPrev.addEventListener('click', function(event) {
-          event.stopPropagation();
-          stepModal(-1);
-      });
-
-      modalNext.addEventListener('click', function(event) {
-          event.stopPropagation();
-          stepModal(1);
-      });
-
-      document.addEventListener('keydown', function(event) {
-          if (modal.style.display !== "block") {
-              return;
-          }
-
-          if (event.key === 'Escape') {
-              closeModal();
-          } else if (event.key === 'ArrowLeft') {
-              stepModal(-1);
-          } else if (event.key === 'ArrowRight') {
-              stepModal(1);
-          }
-      });
   </script>
+  <script src="gallery-viewer.js"></script>
 </body>
 </html>
 
