@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ansh Sharma</title>
+    <meta name="description" content="Ansh Sharma is an ML Research Engineer working on machine learning for scientific discovery. Explore his background, photography, and contact links.">
+    <link rel="canonical" href="https://anshsharma.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ansh Sharma">
+    <meta property="og:title" content="Ansh Sharma">
+    <meta property="og:description" content="Ansh Sharma is an ML Research Engineer working on machine learning for scientific discovery. Explore his background, photography, and contact links.">
+    <meta property="og:url" content="https://anshsharma.com/">
+    <meta property="og:image" content="https://anshsharma.com/images/avatar2.jpg">
+    <meta property="og:image:alt" content="Ansh Sharma">
+    <meta name="twitter:card" content="summary">
+    <script src="gallery-theme.js"></script>
+
     <link rel="icon" type="image/png" href="./images/favicon.png">
     
     <!-- Google Analytics -->
@@ -369,18 +381,20 @@
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site-common.css">
 </head>
 <body>
     <!-- Bokeh background circles -->
-    <div class="bokeh"></div>
-    <div class="bokeh"></div>
-    <div class="bokeh"></div>
-    <div class="bokeh"></div>
-    <div class="bokeh"></div>
-    <div class="bokeh"></div>
-    <div class="bokeh"></div>
-    <div class="bokeh"></div>
+    <div class="bokeh" aria-hidden="true"></div>
+    <div class="bokeh" aria-hidden="true"></div>
+    <div class="bokeh" aria-hidden="true"></div>
+    <div class="bokeh" aria-hidden="true"></div>
+    <div class="bokeh" aria-hidden="true"></div>
+    <div class="bokeh" aria-hidden="true"></div>
+    <div class="bokeh" aria-hidden="true"></div>
+    <div class="bokeh" aria-hidden="true"></div>
     
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="nav-container">
         <nav>
             <h1 class="nav-name">Ansh Sharma</h1>
@@ -391,10 +405,10 @@
         </nav>
       </div>
 
-    <div class="container">
+    <main class="container" id="main-content" tabindex="-1">
         <div class="profile-section">
             <div class="image-container">
-                <img src="./images/avatar2.jpg" alt="Ansh Sharma" class="profile-image" onclick="toggleBokeh()" title="Click for a surprise!">
+                <button class="profile-trigger" type="button" onclick="toggleBokeh()" aria-label="Toggle decorative background" aria-pressed="false"><img src="./images/avatar2.jpg" alt="Ansh Sharma" class="profile-image"></button>
             </div>
             <div class="content">
                 <p>
@@ -419,40 +433,9 @@
           </div>
           </div>
           </div>
-          </div>
+          </main>
 
     <script>
-        function toggleTheme() {
-            const body = document.body;
-            const currentTheme = body.dataset.theme;
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            body.dataset.theme = newTheme;
-            localStorage.setItem('theme', newTheme);
-            
-            // Force a re-render on mobile by triggering a repaint
-            body.style.display = 'none';
-            body.offsetHeight; // Force reflow
-            body.style.display = '';
-            
-            // Update theme button text
-            updateThemeButtonText();
-        }
-
-        function updateThemeButtonText() {
-            const themeBtn = document.getElementById('themeBtn');
-            const isDark = document.body.dataset.theme === 'dark';
-            themeBtn.textContent = isDark ? '☀️' : '🌙';
-        }
-
-        // Load saved theme preference
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedTheme = localStorage.getItem('theme') || 
-                (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
-            document.body.dataset.theme = savedTheme;
-            updateThemeButtonText();
-        });
-
         // Function to toggle bokeh effect
         function toggleBokeh() {
             const bokehCircles = document.querySelectorAll('.bokeh');
@@ -472,9 +455,7 @@
             // Update profile image styling
             profileImage.classList.toggle('bokeh-active');
             
-            // Debug log
-            console.log('Bokeh toggled:', isCurrentlyVisible ? 'OFF' : 'ON');
-            console.log('Bokeh elements found:', bokehCircles.length);
+            document.querySelector('.profile-trigger').setAttribute('aria-pressed', String(!isCurrentlyVisible));
         }
     </script>
 </body>

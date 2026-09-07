@@ -3,7 +3,8 @@
     try { theme = localStorage.getItem('theme') || theme; } catch (_) {}
     const apply = value => {
         document.documentElement.dataset.theme = value === 'light' ? 'light' : 'dark';
-        document.querySelectorAll('.sidebar-theme').forEach(button => {
+        document.documentElement.style.colorScheme = document.documentElement.dataset.theme;
+        document.querySelectorAll('.sidebar-theme, .theme-toggle').forEach(button => {
             button.setAttribute('aria-label', value === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
         });
     };
