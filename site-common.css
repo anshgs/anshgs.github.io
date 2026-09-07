@@ -10,3 +10,10 @@ a:focus-visible, button:focus-visible { outline:3px solid var(--accent-color); o
  body, .bokeh, .profile-image, a, button { animation:none !important; transition:none !important; }
 }
 .original-gallery .container > h1 + .section-header { margin-top:0; }
+
+.header-actions { display:flex; align-items:center; gap:8px; flex-shrink:0; }
+.page-switch { display:grid; place-items:center; box-sizing:border-box; width:34px; height:34px; padding:0; border:1px solid var(--accent-color); border-radius:50%; color:var(--accent-color); background:transparent; text-decoration:none; }
+.page-switch svg { width:17px; height:17px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+.page-switch:hover { color:var(--accent-color); border-color:var(--accent-color); background:var(--nav-bg); }
+.sidebar-header { gap:4px; }
+.sidebar-header .header-actions { gap:4px; }
